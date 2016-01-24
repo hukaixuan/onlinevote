@@ -7,11 +7,7 @@ class UserController extends Controller{
 	public function regist(){ 
 		if (IS_POST) {
 			$data = I('post.');
-			dump($data);
-			$this->display();
-			if (data['username']) {
-				
-			}
+			$this->show(D('User')->regist($data));
 		}else{
 			$this->display();
 		}

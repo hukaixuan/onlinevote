@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <form action="{:U('Home/User/regist')}" method="post">
+    <form action="<?php echo U('Home/User/regist');?>" method="post">
         用户名：
         <input type="text" name="username">
         <br> 密码：
