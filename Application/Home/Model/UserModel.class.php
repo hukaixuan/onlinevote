@@ -13,8 +13,12 @@ class UserModel extends Model{
 			return "密码不一致";
 		}
 		// 密码验证
-		if (preg_match("/^[a-zA-Z\d_]{6,}$/", $data['password'])) {
-			return '密码格式不正确';
+		// if (preg_match("/^[a-zA-Z\d_0-9]{6,}$/", $data['password'])) {
+		// 	return '密码格式不正确';
+		// }
+		//验证是否有重复用户
+		if ( (count($temp=$this->where("userName='".$data['username']."'")->select()) )>0  ) {
+			return '用户名已存在';
 		}
 		
 		$user['userName'] = $data['username'];
