@@ -1,0 +1,15 @@
+/*轮播画面样式*/
+.carousel {
+    height: 350px;
+    background-color: #000;
+}
+
+.carousel .item {
+    height: 350px; //固定高度
+    background-color: #000;
+}
+
+.carousel img {
+    width: 100%; //图片自适应
+    height: 100%;
+}
