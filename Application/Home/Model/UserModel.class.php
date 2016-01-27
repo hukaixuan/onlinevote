@@ -34,8 +34,8 @@ class UserModel extends Model{
 		}
 	}
 	// 用户登录方法
-	public function login(){
-
+	public function login($username, $password){
+		
 	}
 }
 
