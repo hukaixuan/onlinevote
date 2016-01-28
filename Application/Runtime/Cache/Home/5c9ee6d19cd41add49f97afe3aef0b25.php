@@ -1,14 +1,14 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <title>login</title>
-    <script src="__PUBLIC__/js/jquery.js"></script>
+    <script src="/onlinevote/Public/js/jquery.js"></script>
 </head>
 
 <body>
-    <form id="loginForm" action="{:U('Home/User/login')}" method="post">
+    <form id="loginForm" action="<?php echo U('Home/User/login');?>" method="post">
         用户名：
         <input id="username" type="text" name="username">
         <br> 密码：
@@ -26,8 +26,8 @@
     			// console.log(action);
     			// console.log(username);
     			// console.log(password);
-    			$.post(action,{username:username, password:password}, function(data){
-    				console.log(data);
+    			$.post(action,{username:username, password:password}, function(info){
+    				console.log(info);
     			})
     		})
     	})
@@ -35,7 +35,3 @@
 </body>
 
 </html>
-
-
-
-

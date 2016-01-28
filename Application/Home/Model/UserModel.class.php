@@ -35,7 +35,23 @@ class UserModel extends Model{
 	}
 	// 用户登录方法
 	public function login($username, $password){
-		
+		$info = array('flag' => 0, 'status' => '登录失败'); //flag 0表示失败，1表示登录成功
+		if ($username==NULL) {
+			$info['status'] = '用户名不能为空';
+			return $info;
+		}
+		if ($password == NULL) {
+			$info['status'] = '密码不能为空';
+			return $info;
+		}
+
+		$user = $this->where("userName='".$username."' and password='".md5($password)."'")->find();
+		if ($user) {
+			$info['flag'] = 1;
+			$info['status'] = '登录成功';
+			return $info;
+		}
+
 	}
 }
 
